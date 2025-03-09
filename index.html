@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+     google.charts.load('current', {'packages':['corechart']});
+     google.charts.setOnLoadCallback(drawChart);
+     
+     function drawChart() {
+       var data = google.visualization.arrayToDataTable([
+         ['Date', 'Time Spent'],
+         ['2024-03-01', 30],
+         ['2024-03-02', 45],
+         ['2024-03-03', 20]
+       ]);
+
+       var options = {
+         title: 'Login Time by Day',
+         hAxis: {title: 'Date'},
+         vAxis: {title: 'Minutes'},
+         legend: {position: 'none'}
+       };
+
+       var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+       chart.draw(data, options);
+     }
+   </script>
+</head>
+<body>
+   <div id="chart_div" style="width: 100%; height: 400px;"></div>
+</body>
+</html>
